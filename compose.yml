@@ -1,0 +1,27 @@
+services:
+  database_pg_15:
+    image: postgres:15
+    ports:
+      - 5432
+    environment:
+      POSTGRES_DB: sandbox
+      POSTGRES_USER: sandbox_user
+      POSTGRES_PASSWORD: sandbox_user
+    profiles:
+      - pg_15
+  database_pg_14:
+    image: postgres:14
+    labels:
+      org.springframework.boot.ignore: true
+    ports:
+      - 5432
+    environment:
+      POSTGRES_DB: sandbox
+      POSTGRES_USER: sandbox_user
+      POSTGRES_PASSWORD: sandbox_user
+    profiles:
+      - pg_14
+
+
+
+
